@@ -2,15 +2,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; // Importa el módulo para el navegador
 import { CommonModule } from '@angular/common'; // Importa CommonModule
-import { RouterModule } from '@angular/router'; // Importa RouterModule si tienes rutas
-import { AppComponent } from './app.component'; // Importa tu componente principal
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [], // Declara el componente principal
   imports: [
     BrowserModule,  // Asegúrate de importar BrowserModule
     CommonModule,   // Importa CommonModule para usar *ngFor y *ngIf
-    RouterModule    // Si tienes rutas, importa RouterModule
+    MatButtonModule,  // Importa MatButtonModule
+    MatCheckboxModule,  // Importa MatCheckboxModule
   ],
   bootstrap: [] // Establece el componente principal
 })
