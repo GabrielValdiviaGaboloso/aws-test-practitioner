@@ -68,15 +68,17 @@ export class ModalComponent {
   template: `
     <h2>Resultados del Test</h2>
 
-    <div class="dialog-content">
-      <p>Tu puntaje es: {{ data.score }}%</p>
-      <p>Respuestas Correctas: {{ data.correctAnswers }}</p>
-      <p>Respuestas Incorrectas: {{ data.incorrectAnswers }}</p>
-    </div>
+<div class="dialog-content">
+  <!-- Convertir el puntaje decimal a porcentaje multiplicando por 100 -->
+  <p>Tu puntaje es: {{ data.score * 100 }}%</p>
+  <p>Respuestas Correctas: {{ data.correctAnswers }}</p>
+  <p>Respuestas Incorrectas: {{ data.incorrectAnswers }}</p>
+</div>
 
-    <div class="dialog-actions">
-      <button (click)="closeDialog()">Cerrar</button>
-    </div>
+<div class="dialog-actions">
+  <button (click)="closeDialog()">Cerrar</button>
+</div>
+
   `,
   styles: [
     `

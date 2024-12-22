@@ -18,6 +18,7 @@ export class AppComponent {
   questions = QUESTIONS;
   showResults = false;
   results: string[] = [];
+  
 
   // Inyectar MatDialog en el constructor
   constructor(public dialog: MatDialog) {}
@@ -45,21 +46,37 @@ export class AppComponent {
   submitTest() {
     let correctAnswers = 0;
     let incorrectAnswers = 0;
-
-    this.questions.forEach(question => {
+    const incorrectQuestions: number[] = [];  // Lista de preguntas incorrectas
+    
+    this.questions.forEach((question, index) => {
+      // Compara las respuestas seleccionadas con la respuesta correcta
       const isCorrect = question.selectedAnswers.sort().toString() === question.correctAnswer.sort().toString();
+      question.isAnsweredIncorrectly = !isCorrect;  // Marcar si la respuesta fue incorrecta
+    
       if (isCorrect) {
         correctAnswers++;
       } else {
         incorrectAnswers++;
+        incorrectQuestions.push(index + 1);  // Agregar el número de la pregunta incorrecta
       }
     });
-
+  
+    // Almacenar las preguntas incorrectas
+    if (incorrectQuestions.length > 0) {
+      this.results = [`Preguntas incorrectas: ${incorrectQuestions.join(', ')}`];
+    } else {
+      this.results = ['Todas las respuestas son correctas'];
+    }
+  
     const totalQuestions = this.questions.length;
     const score = (correctAnswers / totalQuestions) * 100;
-
+  
+    // Llamar al modal para mostrar resultados
     this.openResultModal(score, correctAnswers, incorrectAnswers);
+    this.showResults = true;  // Mostrar resultados después de enviar el test
   }
+  
+  
 
   openResultModal(score: number, correctAnswers: number, incorrectAnswers: number): void {
     this.dialog.open(ResultDialog, {
