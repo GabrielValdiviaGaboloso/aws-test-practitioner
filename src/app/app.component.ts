@@ -4,6 +4,8 @@ import { QUESTIONS } from './questions';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange } from '@angular/material/checkbox';  // Importar MatCheckboxChange
+import { MatDialog } from '@angular/material/dialog'; // Importar MatDialog
+import { ResultDialog } from './modal/modal.component';  // Importar ResultDialog
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,9 @@ export class AppComponent {
   questions = QUESTIONS;
   showResults = false;
   results: string[] = [];
+
+  // Inyectar MatDialog en el constructor
+  constructor(public dialog: MatDialog) {}
 
   public onSelectOption(questionIndex: number, option: string, event: MatCheckboxChange): void {
     const isChecked = event.checked;  // Obtener el estado del checkbox desde MatCheckboxChange
@@ -37,18 +42,32 @@ export class AppComponent {
     }
   }
 
-  public submitTest(): void {
-    this.results = [];
-    this.questions.forEach((question, index) => {
-      const selectedAnswers = question.selectedAnswers || [];
+  submitTest() {
+    let correctAnswers = 0;
+    let incorrectAnswers = 0;
 
-      const isCorrect = 
-        selectedAnswers.length === question.correctAnswer.length &&
-        question.correctAnswer.every(answer => selectedAnswers.includes(answer)) &&
-        selectedAnswers.every(answer => question.correctAnswer.includes(answer));
-
-      this.results.push(`Pregunta ${index + 1}: ${isCorrect ? 'Correcta' : 'Incorrecta'}`);
+    this.questions.forEach(question => {
+      const isCorrect = question.selectedAnswers.sort().toString() === question.correctAnswer.sort().toString();
+      if (isCorrect) {
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+      }
     });
-    this.showResults = true;
+
+    const totalQuestions = this.questions.length;
+    const score = (correctAnswers / totalQuestions) * 100;
+
+    this.openResultModal(score, correctAnswers, incorrectAnswers);
+  }
+
+  openResultModal(score: number, correctAnswers: number, incorrectAnswers: number): void {
+    this.dialog.open(ResultDialog, {
+      data: {
+        score,
+        correctAnswers,
+        incorrectAnswers
+      }
+    });
   }
 }
