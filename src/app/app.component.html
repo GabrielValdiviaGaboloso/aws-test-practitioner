@@ -1,0 +1,30 @@
+<div class="test-container">
+    <div class="question-card" *ngFor="let question of questions; let i = index">
+      <h3>{{ i + 1 }}. {{ question.question }}</h3>
+  
+      <div class="options">
+        <label *ngFor="let option of question.options">
+          <input
+            type="checkbox"
+            [value]="option"
+            [name]="'question' + i"
+            (change)="onSelectOption(i, option, $event)"
+            [checked]="question.selectedAnswers.includes(option)"
+          />
+          {{ option }}
+        </label>
+      </div>
+    </div>
+  
+    <button class="submit-btn" (click)="submitTest()">Enviar Test</button>
+  
+    <div *ngIf="showResults" class="results">
+      <h3>Resultados del Test:</h3>
+      <ul>
+        <li *ngFor="let result of results">{{ result }}</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  
