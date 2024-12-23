@@ -1,6 +1,6 @@
 export const QUESTIONS = [
   {
-    question: 'Un cliente está implementando una nueva aplicación y debe elegir una región de AWS. ¿Cuál de los siguientes factores podría influir en la decisión del cliente?',
+    question: 'Un cliente está implementando una nueva aplicación y debe elegir una región de AWS. ¿Cuál de los siguientes factores podría influir en la decisión del cliente? (Dos opciones)',
     options: ['Latencia reducida a los usuarios', 'La presentación de la aplicación en el idioma local', 'Cumplimiento de la soberanía de datos', 'Costos de enfriamiento en climas más cálidos', 'Proximidad a la oficina del cliente para visitas on-site'],
     correctAnswer: ['Latencia reducida a los usuarios', 'Cumplimiento de la soberanía de datos'],
     selectedAnswers: [] as string[],
@@ -48,7 +48,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Cuáles de las siguientes son formas válidas para que un cliente interactúe con los servicios de AWS?(Escoge dos.)',
+    question: '¿Cuáles de las siguientes son formas válidas para que un cliente interactúe con los servicios de AWS? (Escoge dos.)',
     options: ['Command line interface', 'On-premises', 'Software Development Kits', 'Software-as-a-service', 'Hybrid'],
     correctAnswer: ['Command line interface', 'Software Development Kits'],
     selectedAnswers: [] as string[],
@@ -152,7 +152,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: 'Según el modelo de responsabilidad compartida de AWS, ¿cuáles son las responsabilidades del cliente?',
+    question: 'Según el modelo de responsabilidad compartida de AWS, ¿cuáles son las responsabilidades del cliente? (Escoge dos.)',
     options: ['Seguridad física y ambiental', 'Dispositivos de red física, incluidos cortafuegos', 'Desmantelamiento de dispositivos de almacenamiento', 'Seguridad de los datos en tránsito', 'Autenticación de integridad de datos'],
     correctAnswer: ['Seguridad de los datos en tránsito', 'Autenticación de integridad de datos'],
     selectedAnswers: [] as string[],
@@ -186,7 +186,7 @@ export const QUESTIONS = [
   {
     question: '¿Quién es responsable de parchear el sistema operativo invitado para Amazon RDS?',
     options: ['The AWS Product team', 'The customer Database Administrator', 'Managed partners', 'AWS Support'],
-    correctAnswer: ['The customer Database Administrator'],
+    correctAnswer: ['AWS Support'],
     selectedAnswers: [] as string[],
     maxAnswers: 1,
     isAnsweredIncorrectly: false
@@ -347,7 +347,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Qué modelo de precios de Amazon EC2 debe usarse para cumplir con los requisitos de licencia de software por núcleo? (Escoge dos.)',
+    question: '¿Qué modelo de precios de Amazon EC2 debe usarse para cumplir con los requisitos de licencia de software por núcleo? ',
     options: ['Dedicated Hosts', 'On-Demand Instances', 'Spot Instances', 'Reserved Instances'],
     correctAnswer: ['Dedicated Hosts'],
     selectedAnswers: [] as string[],
@@ -365,7 +365,7 @@ export const QUESTIONS = [
   {
     question: 'El uso de AWS Config para registrar, auditar y evaluar los cambios en los recursos de AWS para permitir la trazabilidad es un ejemplo de qué pilar del marco de buena arquitectura de AWS.',
     options: ['Security', 'Operational excellence', 'Performance efficiency', 'Cost optimization'],
-    correctAnswer: ['Operational excellence'],
+    correctAnswer: ['Security'],
     selectedAnswers: [] as string[],
     maxAnswers: 1,
     isAnsweredIncorrectly: false
@@ -477,7 +477,7 @@ export const QUESTIONS = [
   {
     question: '¿Qué puede ayudar en la evaluación de una aplicación para la migración a la nube? (Elija dos opciones).',
     options: ['AWS Trusted Advisor', 'AWS Professional Services', 'AWS Systems Manager', 'AWS Partner Network (APN)', 'AWS Secrets Manager'],
-    correctAnswer: ['AWS Trusted Advisor', 'AWS Professional Services'],
+    correctAnswer: ['AWS Partner Network (APN)', 'AWS Professional Services'],
     selectedAnswers: [] as string[],
     maxAnswers: 2,
     isAnsweredIncorrectly: false
@@ -533,7 +533,7 @@ export const QUESTIONS = [
   {
     question: 'Una empresa está buscando una solución de almacenamiento de datos escalable. ¿Cuál de las siguientes soluciones de AWS satisfaría las necesidades de la empresa?',
     options: ['Amazon Simple Storage Service (Amazon S3)', 'Amazon DynamoDB', 'Amazon Kinesis', 'Amazon Redshift'],
-    correctAnswer: ['Amazon Simple Storage Service (Amazon S3)'],
+    correctAnswer: ['Amazon Redshift'],
     selectedAnswers: [] as string[],
     maxAnswers: 1,
     isAnsweredIncorrectly: false
