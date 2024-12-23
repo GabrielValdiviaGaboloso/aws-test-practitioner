@@ -1,8 +1,8 @@
 [build]
-  command = "npm run build"  # Comando para construir la aplicación
-  publish = "build"          # Carpeta a desplegar (la carpeta `build` que React genera)
+  command = "ng build"  # Comando para construir la aplicación Angular
+  publish = "dist/test-aws/browser"  # Carpeta de salida de Angular donde se encuentran los archivos construidos
 
 [[redirects]]
-  from = "/*"                # Redirecciona todas las rutas al index.html
+  from = "/*"  # Redirecciona todas las rutas al index.html
   to = "/index.html"
   status = 200

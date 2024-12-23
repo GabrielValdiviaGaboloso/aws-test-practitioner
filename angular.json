@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test-aws",
+            "outputPath": "dist/test-aws/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
