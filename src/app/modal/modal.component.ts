@@ -52,6 +52,7 @@ export class ModalComponent {
     this.openResultModal(score, correctAnswers, incorrectAnswers);
   }
 
+  
   openResultModal(score: number, correctAnswers: number, incorrectAnswers: number): void {
     this.dialog.open(ResultDialog, {
       data: {
@@ -63,6 +64,7 @@ export class ModalComponent {
   }
 }
 
+
 @Component({
   selector: 'result-dialog',
   template: `
@@ -70,7 +72,7 @@ export class ModalComponent {
 
 <div class="dialog-content">
   <!-- Convertir el puntaje decimal a porcentaje multiplicando por 100 -->
-  <p>Tu puntaje es: {{ data.score * 100 }}%</p>
+  <p>Tu puntaje es: {{ formatScore(data.score) }}%</p>
   <p>Respuestas Correctas: {{ data.correctAnswers }}</p>
   <p>Respuestas Incorrectas: {{ data.incorrectAnswers }}</p>
 </div>
@@ -121,7 +123,9 @@ export class ResultDialog {
     @Inject(MAT_DIALOG_DATA) public data: any,        // Para recibir los datos del modal
     private dialogRef: MatDialogRef<ResultDialog>       // Para poder cerrar el modal
   ) {}
-
+  formatScore(score: number): string {
+    return `${Math.round(score)}`;
+  }
   closeDialog() {
     this.dialogRef.close();  // Cierra el modal
   }}
