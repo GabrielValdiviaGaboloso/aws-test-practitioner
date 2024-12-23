@@ -1,28 +1,56 @@
-<div class="test-container">
-  <div class="question-card" *ngFor="let question of questions; let i = index">
-    <h3>{{ i + 1 }}. {{ question.question }}</h3>
+<div class="app-container">
+  <!-- Portada -->
+  <header class="header">
+    <h1>Bienvenido al Test</h1>
+    <p>¡Responde las preguntas y obtén tu puntaje!</p>
+  </header>
 
-    <div class="options">
-      <mat-checkbox
-        *ngFor="let option of question.options"
-        [value]="option"
-        [name]="'question' + i"
-        (change)="onSelectOption(i, option, $event)"
-        [checked]="question.selectedAnswers.includes(option)"
-      >
-        {{ option }}
-      </mat-checkbox>
+  <!-- Contenedor del Test -->
+  <div class="test-container">
+    <!-- Cronómetro -->
+    <div class="timer">
+      <p>{{ getMinutes() }}:{{ getSeconds() | number: '2.0' }}</p>
+      <button mat-raised-button color="primary" (click)="startTimer()" [disabled]="timerStarted">Iniciar </button>
+      <button mat-raised-button color="accent" (click)="resetTimer()" [disabled]="!timerStarted">Resetear </button>
+    </div>
+  
+    <!-- Botones para iniciar y resetear -->
+   
+  
+    <div class="question-card" *ngFor="let question of questions; let i = index">
+      <h3>{{ i + 1 }}. {{ question.question }}</h3>
+  
+      <ul class="options">
+        <li *ngFor="let option of question.options; let j = index">
+          <mat-checkbox
+            [value]="option"
+            [name]="'question' + i"
+            (change)="onSelectOption(i, option, $event)"
+            [checked]="question.selectedAnswers.includes(option)"
+          >
+            <span>{{ getOptionLetter(j) }}. {{ option }}</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </div>
+  
+    <button mat-raised-button color="primary" (click)="submitTest()">Enviar Test</button>
+  
+    <div *ngIf="showResults" class="results">
+      <h3>Resultados del Test:</h3>
+      <ul>
+        <li>{{ results }}</li>
+      </ul>
     </div>
   </div>
-
-  <button mat-raised-button color="primary" (click)="submitTest()">Enviar Test</button>
-
-  <div *ngIf="showResults" class="results">
-    <h3>Resultados del Test:</h3>
-    <ul>
-      <li>{{ results }}</li>  <!-- Aquí se mostrará las preguntas incorrectas -->
-    </ul>
-  </div>
   
   
+
+  <!-- Footer -->
+ <footer class="footer">
+  <p>© 2024 Creado por Gabriel Valdivia</p>
+  <a href="https://github.com/GabrielValdiviaGaboloso" target="_blank" rel="noopener noreferrer">
+    Ver mi perfil en GitHub
+  </a>
+</footer>
 </div>

@@ -48,7 +48,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Cuáles de las siguientes son formas válidas para que un cliente interactúe con los servicios de AWS?',
+    question: '¿Cuáles de las siguientes son formas válidas para que un cliente interactúe con los servicios de AWS?(Escoge dos.)',
     options: ['Command line interface', 'On-premises', 'Software Development Kits', 'Software-as-a-service', 'Hybrid'],
     correctAnswer: ['Command line interface', 'Software Development Kits'],
     selectedAnswers: [] as string[],
@@ -64,7 +64,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Cuál de los siguientes servicios de AWS se puede utilizar para entregar grandes cantidades de contenido de video en línea con la latencia más baja posible?',
+    question: '¿Cuál de los siguientes servicios de AWS se puede utilizar para entregar grandes cantidades de contenido de video en línea con la latencia más baja posible? (Escoge dos.)',
     options: ['AWS Storage Gateway', 'Amazon S3', 'Amazon Elastic File System (EFS)', 'Amazon Glacier', 'Amazon CloudFront'],
     correctAnswer: ['Amazon S3', 'Amazon CloudFront'],
     selectedAnswers: [] as string[],
@@ -80,7 +80,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Qué servicios de AWS se pueden utilizar como herramientas de automatización de infraestructura?',
+    question: '¿Qué servicios de AWS se pueden utilizar como herramientas de automatización de infraestructura? (Escoge dos.)',
     options: ['AWS CloudFormation', 'Amazon CloudFront', 'AWS Batch', 'AWS OpsWorks', 'Amazon QuickSight'],
     correctAnswer: ['AWS CloudFormation', 'AWS OpsWorks'],
     selectedAnswers: [] as string[],
@@ -96,7 +96,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Qué características o servicios se pueden usar para monitorear los costos y gastos de una cuenta de AWS?',
+    question: '¿Qué características o servicios se pueden usar para monitorear los costos y gastos de una cuenta de AWS? (Escoge dos.)',
     options: ['AWS Cost and Usage report', 'AWS product pages', 'AWS Simple Monthly Calculator', 'Billing alerts and Amazon CloudWatch alarms', 'AWS Price List API'],
     correctAnswer: ['AWS Cost and Usage report', 'Billing alerts and Amazon CloudWatch alarms'],
     selectedAnswers: [] as string[],
@@ -192,7 +192,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Qué servicios de AWS se pueden escalar con AWS Auto Scaling?',
+    question: '¿Qué servicios de AWS se pueden escalar con AWS Auto Scaling? (Escoge dos.)',
     options: ['Amazon EC2', 'Amazon DynamoDB', 'Amazon S3', 'Amazon Route 53', 'Amazon Redshift'],
     correctAnswer: ['Amazon EC2', 'Amazon DynamoDB'],
     selectedAnswers: [] as string[],
@@ -347,7 +347,7 @@ export const QUESTIONS = [
     isAnsweredIncorrectly: false
   },
   {
-    question: '¿Qué modelo de precios de Amazon EC2 debe usarse para cumplir con los requisitos de licencia de software por núcleo?',
+    question: '¿Qué modelo de precios de Amazon EC2 debe usarse para cumplir con los requisitos de licencia de software por núcleo? (Escoge dos.)',
     options: ['Dedicated Hosts', 'On-Demand Instances', 'Spot Instances', 'Reserved Instances'],
     correctAnswer: ['Dedicated Hosts'],
     selectedAnswers: [] as string[],

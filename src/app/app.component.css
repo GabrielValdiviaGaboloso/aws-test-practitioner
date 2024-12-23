@@ -22,3 +22,110 @@
   border-radius: 5px;
 }
 
+/* Estilo global de la aplicación */
+.app-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Portada */
+.header {
+  background-color: #00796b;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Contenedor del Test */
+.test-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las opciones */
+.options {
+  list-style-type: none;
+  padding: 0;
+}
+
+.options li {
+  margin-bottom: 10px;
+}
+
+/* Estilo para los resultados */
+.results {
+  margin-top: 20px;
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Estilo del Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #00796b;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilo del botón */
+button {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilo del enlace en el footer */
+.footer a {
+  color: #6ff00d;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el cronómetro */
+.timer {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  z-index: 1000;
+  
+}
+
+.timer p {
+  text-align: center;  /* Centra el texto horizontalmente */
+  margin: 0 auto;      /* Asegura que esté centrado dentro del contenedor */
+}
